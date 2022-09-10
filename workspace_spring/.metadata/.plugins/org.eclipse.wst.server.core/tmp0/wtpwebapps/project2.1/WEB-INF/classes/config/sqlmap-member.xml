@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+   "-//mybatis.org//DTD Mapper 3.0//EN" 
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+   
+<mapper namespace="com.itbank.model.MemberDAO">
+	<update id="updateInfo" parameterType="member">
+		update member
+		<set>
+			<if test="user_pw != null">user_pw=#{user_pw},</if>
+			<if test="user_nickname != null">user_nickname=#{user_nickname},</if>
+			<if test="user_pnum != null">user_pnum=#{user_pnum},</if>
+			<if test="member_out != null">member_out=#{member_out},</if>
+			<if test="user_profile_img != null">user_profile_img = #{user_profile_img},</if>
+		</set>
+		where user_email=#{user_email}
+	</update>
+	
+	<select id="update_session" parameterType="string" resultType="member">
+		select * from member where user_email=#{user_email}
+	</select>
+	
+	<insert id="joinMember" parameterType="member" >
+		insert into member(
+			 <if test="grade!=null">
+			 	grade,
+			 </if> 
+			 user_email,
+			 user_pw,
+			 user_nickname,
+			user_pnum,
+			 user_gender
+			 )
+			 values(
+			 <if test="grade!=null">
+			 	#{grade},
+			 </if>
+			#{user_email}, 
+			#{user_pw},
+			#{user_nickname},
+			#{user_pnum},
+			#{user_gender}
+			 )
+	</insert>
+</mapper>

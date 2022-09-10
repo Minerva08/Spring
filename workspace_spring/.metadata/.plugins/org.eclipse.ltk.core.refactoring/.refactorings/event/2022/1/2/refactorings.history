@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;event/src/main/webapp/WEB-INF/views/home.jsp&apos; to &apos;pre_next.jsp&apos;" description="Rename resource &apos;home.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/views/home.jsp" name="pre_next.jsp" stamp="1641103968700" updateReferences="true"/>
+</session>

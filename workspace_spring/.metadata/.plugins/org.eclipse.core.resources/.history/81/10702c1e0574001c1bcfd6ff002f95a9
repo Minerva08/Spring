@@ -1,0 +1,477 @@
+@charset "utf-8";
+
+.myPage_component{
+	display:flex;
+	width:80%;
+	margin:auto;
+}
+
+/* <div class="myPage_left"> 영역입니다.*/
+.myPage_left{
+	width:20%;
+	min-width: 190px;
+}
+.myPage_left>div>ul>li>a{
+	color:#22222280;
+	font-size: 15px;
+}
+.myPage_left>div:last-child {
+	margin-top: 40px;
+}
+.myPage_left>div>span {
+	font-size: 18px;
+	font-weight: bold;
+}
+.myPage_left>div>ul>li {
+	margin: 12px 0px 12px 0px;
+}
+
+/*right*/
+
+.myPage_component>.myPage_right{
+	width:80%;
+}
+.myPage_component>.myPage_shopping_info{
+	display:flex;
+	flex-flow: column;
+	float:left;
+	width:180px;
+	height:50px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_user_detail>.myPage_info_box>p{
+	font-size: 13px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_user_detail>.myPage_info_box>a>button{
+	border:1px solid #d3d3d3;
+	background-color: inherit;
+	border-radius: 6px;
+	font-size: 12px;
+	width:90px;
+	height: 30px;
+	
+}
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_list_title{
+	margin-top: 60px;
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_list_title>a>span{
+	font-size: 13px;
+	color: rgba(34,34,34,.5);	
+}
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info{
+	border:1px solid #ebebeb;
+	border-radius: 10px;
+	display:flex;
+	height:130px;
+	width:100%;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 25px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_user_detail{
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	min-width: 290px;
+	margin-left: 20px;
+}
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_membership_detail>.myPage_memberClass {
+	width: 100px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_membership_detail>.myPage_memberClass>p{
+	font-size: 13px;
+	color: rgba(34,34,34,.5);
+}
+.myPage_component>.right>.myPage_right_list>.myPage_info>.myPage_user_detail>.myPage_info_box>p{
+	font-size: 13px;
+    color: rgba(34,34,34,.5);
+}
+
+.myPage_component>.right>.myPage_right_list>.myPage_info>.myPage_user_detail>.myPage_info_box>.myPage_profileBtn{
+	border:1px solid grey;
+	background-color: inherit;
+	border-radius: 10px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_membership_detail{
+	display:flex;
+	align-items: center;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_membership_detail>.myPage_memberClass{
+	display: inline-block;
+    text-align: center;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_user_detail{
+	display:flex;
+	
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_info>.myPage_user_detail>.myPage_user_thumnail>img{
+	width: 100px;
+    height: 100px; 
+    border-radius: 70%;
+    overflow: hidden;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase{
+	border: 0px solid grey;
+    border-radius: 12px;
+    display: flex;
+    height: 96px;
+    width: 100%;
+    min-width: 310px;
+	background-color: #fafafa;
+	justify-content: space-around;
+	align-items: center;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase>.myPage_tab_link{
+    display: block;
+    height: 96px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase>.myPage_entire::after{
+	content:"";
+	color:#ccc;
+	width:1px;
+	height:15px;
+}
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase>div>a>dl>dt{
+	font-size: 13px;
+    letter-spacing: -.07px;
+    color: rgba(34,34,34,.8);
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase>div>a>dl>.myPage_entireCount{
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -.09px;
+    font-weight: 700;
+    color: #f15746;
+    box-sizing: border-box;
+    text-align: center;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase>div {
+	text-align: center;
+	min-width: 75px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_purchase>div>a>dl>dd{
+    width: 100%;
+    margin: 0;
+}
+
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_sell{
+	border: 0px solid grey;
+    border-radius: 12px;
+    display: flex;
+    height: 96px;
+    width: 100%;
+    min-width: 310px;
+	background-color: #fafafa;
+	justify-content: space-around;
+	align-items: center;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_sell>div {
+	text-align: center;
+	min-width: 75px;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_sell>div>a>dl>dd{
+    width: 100%;
+    margin: 0;
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_sell>div>a>dl>.myPage_entireCount{
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 700;
+    color: #31b46e;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_wish{
+	border: 0px solid grey;
+    border-radius: 12px;
+    display: flex;
+    height: 96px;
+    width: 100%;
+    min-width: 310px;
+    background-color: #fafafa;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_wish>div{
+	font-size: 13px;
+    color: rgba(34,34,34,.8);
+}
+.myPage_component>.myPage_right>.myPage_right_list>.myPage_wish>a>button{
+	background-color: #fafafa;
+	border: 1px solid #d3d3d3;
+    color: rgba(34,34,34,.8);
+    height: 34px;
+    line-height: 32px;
+    border-radius: 10px;
+}
+
+
+/*================================================ */
+
+
+
+.buyList_component {
+	width: 80%;
+	margin: auto;
+}
+.buyList_right {
+	min-width: 540px;
+	width: 80%;
+}
+.buyList_right > .buyList_r_div1 {
+	height: 40px;
+	margin: 20px 0px 20px 0px; 
+}
+.buyList_right > .buyList_r_div2 > ul {
+	width: 100%;
+}
+.buyList_right > .buyList_r_div2 > ul > li {
+	width: 33.3%;
+	display: flex;
+	flex-flow: column; 
+	text-align: center;
+	cursor: pointer;
+	min-width: 65px;
+	justify-content: center;
+	height: 55px;	
+	padding-Top: 2px;
+	padding-bottom: 2px;
+}
+
+.buyList_right > .buyList_r_div2 > ul > li > span:nth-child(2) {
+	font-size: 12px;
+	color: gray;
+}
+.buyList_right > .buyList_r_div2 > ul > li > span {	
+	height: 100%;
+}	
+.buyList_right > .buyList_r_div2 > .r_div2_div1{
+	border-top: 0.5px solid #dadada;
+	background-color: #fafafa;
+	height: 60px;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div1 > div{
+	width: 60%;
+	margin: auto;
+	justify-content: space-evenly;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div1 > div > div{
+	height: 32px;
+	display: flex;
+	align-items: center;
+	border: 0.5px solid #dadada;
+	justify-content: center;
+	cursor: pointer;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div1 > div > div > span {
+	min-width: 60px;
+	text-align: center;
+	font-size: 13px;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div1 > div > div:nth-Child(1){
+	min-width: 85px;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div1 > div > div:nth-Child(4) {
+	min-width: 120px;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div1 > div > div:nth-Child(6) {
+	min-width: 120px;
+}
+.r_div2_div2 > ul {
+	min-height: 75px;
+}
+
+.r_div2_div2_nav {
+	border-bottom: 0.5px solid #dadada;
+	font-size: 13px;
+	padding: 10px;
+}
+.r_div2_div2_nav > div > div{
+	min-width: 100px;
+	cursor: pointer;
+}
+.buyList_right > .buyList_r_div2 > .r_div2_div2 > div > select{
+	min-width: 120px;
+	height: 36px;
+	background-color: white;
+	border: 0.5px solid #dadada;
+	border-radius: 12px;
+	cursor: pointer;
+}
+.r_div2_div2_content {
+	display: flex;
+	padding: 100px;
+	align-items: center;
+	flex-flow: column;
+}
+.event_li > span:nth-Child(1) {
+	font-size: 20px;
+	font-weight: bold;
+}
+/*스크립트용-------------------------------------------------------*/
+.border_bottom {
+	border-bottom: 2px solid black;
+}
+
+
+
+
+/*sale==========================================================================*/
+
+
+
+
+.saleList_component {
+	width: 80%;
+	margin: auto;
+}
+.saleList_right {
+	width: 80%;
+	min-width: 540px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden{
+          display: none;
+      }
+     .myPage_profile{
+       margin-top: 140px;
+       }
+
+      .myPage_profile>.profile{
+          width: 1000px;
+          height: 1123px;
+          box-sizing: border-box;
+      }
+
+      .myPage_profile > .profile > .profile_top{
+          border-bottom: 3px solid black;
+      }
+      .myPage_profile > .profile >.profile_detail{
+          margin-top:50px;
+          width:480px;
+          height: 500px;
+      }
+      .myPage_profile > .profile >.profile_detail>.detail_top{
+          width:480px;
+          height: 250px;
+      }
+      .myPage_profile > .profile >.profile_detail>.detail_top>.profile_image{
+          width: 200px;
+          height: 200px;
+          margin: 0;
+      }
+
+      .myPage_profile > #change_img{
+          width: 40px;
+          height: 30px;
+      }
+      .myPage_profile > #img_delete{
+      width: 20px;
+      height: 30px;
+      }
+      .myPage_profile > .profile >.profile_detail>.detail_top>.profile_image>img{
+      width: 180px;
+      height: 180px;
+      }
+
+      .myPage_profile > .profile >.profile_detail> .profile_login{
+      width: 480px;
+      height: 50px;
+      border-bottom: 1.5px solid darkgrey;
+      }
+
+      .myPage_profile>.profile > .profile_detail>.profile_pw,
+      .myPage_profile>.profile > .profile_detail>.profile_nickname,
+      .myPage_profile>.profile > .profile_detail>.profile_pnum{
+          width: 480px;
+          height: 50px;
+          border-bottom: 1.5px solid darkgrey;
+      }
+		.myPage_profile > #detail{
+			margin-top: 400px;
+		}
+     
+      .myPage_profile>.profile > .profile_detail > .category,
+      .myPage_profile>.profile > .profile_detail > .profile_info_pw_change > .info_modify,
+      .myPage_profile>.profile > .profile_detail > .profile_info_nick_change>.info_modify,
+      .myPage_profile>.profile > .profile_detail > .profile_info_pnum_change>.info_modify{
+
+          width: 380px;
+          font-size: 13px;
+          margin-bottom: 5px;
+      }
+
+
+      .myPage_profile>.profile > .profile_detail >.profile_pw>.profile_info_pw_change{
+          width: 480px;
+          height: 160px;
+          font-size: 13px;
+          
+      }
+
+      .myPage_profile>.profile > .profile_detail >.profile_nickname>.profile_info_nick_change,
+      .myPage_profile>.profile > .profile_detail >.profile_pnum>.profile_info_pnum_change{
+          width: 480px;
+          height: 150px;
+          font-size: 13px;
+          
+      }
+      .myPage_profile>.profile > .profile_detail >.profile_pw>.profile_info_pw_change>form>input,
+      .myPage_profile>.profile > .profile_detail >.profile_pw>.profile_info_pw_change>.origin_pw>input,
+      .myPage_profile>.profile > .profile_detail >.profile_nickname>.profile_info_nick_change>form >input,
+      .myPage_profile>.profile > .profile_detail >.profile_pnum>.profile_info_pnum_change>.new_pnum>input{
+          font-size: 13px;
+          border:none;
+          outline: none;
+          width: 380px;
+
+      }
+      .myPage_profile>.profile > .profile_detail >.profile_pw>.profile_info_pw_change>.origin_pw{
+          border-bottom: 1px solid darkgrey;
+      }
+
+     
+      .myPage_profile>.profile > .profile_detail >.profile_pw>.profile_info_pw_change>.btns>#change_pw,
+      .myPage_profile>.profile > .profile_detail >.profile_nickname>.profile_info_nick_change>.btns>#change_nick,
+      .myPage_profile>.profile > .profile_detail >.profile_pnum>.profile_info_pnum_change>.btns >#change_pnum{  
+      	width: 100px;
+      	height: 40px;
+          margin-top: 50px;
+          margin-left: 180px;
+      }
+      
+
+
+
+
+
+
+
+
+
+

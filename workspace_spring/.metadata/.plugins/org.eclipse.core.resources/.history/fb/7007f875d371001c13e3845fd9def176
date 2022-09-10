@@ -1,0 +1,150 @@
+package com.itbank.controller;
+
+import java.util.HashMap;
+import java.util.List;
+
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.itbank.model.MemberDTO;
+import com.itbank.service.MemberService;
+
+
+@Controller
+public class MemberController {
+
+	@Autowired MemberService ms;
+	
+	@GetMapping("/member/login")
+	public void getlogin() {
+	};
+	
+	
+	@PostMapping("/member/login")
+	public ModelAndView login(MemberDTO dto, HttpSession session) {
+		ModelAndView mav = new ModelAndView("/home");
+	
+		MemberDTO login = ms.isMember(dto);
+		if(login!=null) {
+			session.setAttribute("login", login);
+			mav.addObject(login);
+		}
+		else {
+			mav.setViewName("/member/alert");
+			mav.addObject("msg","이메일 또는 비밀번호를 확인해 주세요");
+		}   
+		
+		return mav;
+	}   
+	
+	@GetMapping("/member/alert")
+	public void loginError(){}
+	
+	@GetMapping("/member/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:/";
+	}
+	
+	
+	@GetMapping("/member/join")
+	public void getjoin() {};
+	
+	@PostMapping("/member/join")
+	public ModelAndView join(MemberDTO dto) {
+//		session.invalidate();
+		// 회원가입 후 마이페이지 상세정보 작성으로 이동해야 됌
+		ModelAndView mav = new ModelAndView("/home");
+		
+//		session.setAttribute("login", dto);
+		int row = ms.join(dto);
+		
+		mav.addObject("row" , row);
+		
+		
+		return mav;
+	}
+	
+	@GetMapping("/member/find_email")
+	public void getfind_email() {}
+	
+	
+	/*비밀번호 찾기*/
+	@GetMapping("/member/find_pw")
+	public void getfind_pw()throws Exception {}
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("/nickname_check")
+	@ResponseBody
+	public HashMap<String, String> nickname_check(String user_nickname){
+		HashMap<String, String> map = new HashMap<String, String>();
+		MemberDTO dto = ms.duplicate_nickname(user_nickname);
+		String color="";
+		if(dto==null) {
+			color="blue";
+		}
+		else {
+			color="red";
+		}
+		
+		map.put("msg",dto==null ? "사용 가능한 닉네임입니다." : "이미 사용중인 닉네임입니다.");
+		map.put("color",color);
+		return map;
+
+	}
+	
+	
+	@GetMapping("/email_check")
+	@ResponseBody
+	public HashMap<String, String> email_check(String user_email){
+		
+		HashMap<String, String> map = new HashMap<String, String>();
+		MemberDTO dto = ms.duplicate_email(user_email);
+		String color="";
+		if(dto==null) {
+			color="blue";
+		}
+		else {
+			color="red";
+		}
+		
+		map.put("msg",dto==null ? "사용 가능한 이메일입니다." : "이미 사용중인 이메일입니다.");
+		map.put("color",color);
+		return map;
+	}
+	@GetMapping("/findEmail")
+	@ResponseBody
+	public String getEmail(String pnum) {
+		System.out.println(pnum);
+		return ms.getEmail(pnum);
+	}
+		
+	
+	
+	
+	
+	
+	
+}

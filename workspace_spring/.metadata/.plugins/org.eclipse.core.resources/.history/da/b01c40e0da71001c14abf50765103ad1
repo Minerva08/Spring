@@ -1,0 +1,40 @@
+@charset "utf-8";
+.member_alert>p{
+	height: 20px;
+	background-color: red;
+}
+
+.member_alert>#alert{
+ 	border: 1px solid black;
+    width: 400px;
+    height: 200px;
+    margin: 50px auto;
+    border-radius: 25px;
+    background-color:white;
+    opacity: 0;
+    position: absolute;
+    top: 150px;
+    transition-duration: 1.5s;
+    
+}
+
+.member_login_main {
+	z-index: -5;
+}
+
+.member_alert > #alert > .msg{
+	font-size: 16px; 
+	font-weight: bold; 
+	margin: 30px;
+}
+
+.member_alert>.btn{
+	font-size: 20px;
+	border: none;
+	padding: 0;
+	background-color: none;
+	
+}
+
+
+

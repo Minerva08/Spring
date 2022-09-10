@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="MemberTestDAO">
+	<!-- sst.selectOne(statement), statement가 id에 맵핑 -->
+	<!-- select 이므로 반환하는 데이터의 자료형을 명시해야 처리가 가능하다 -->
+	
+	<select id="test1" resultType="string">
+		select banner from v$version
+	</select>
+	
+	<select id="now" resultType="java.sql.Date">
+		select sysdate from dual
+	</select>
+	
+</mapper>	

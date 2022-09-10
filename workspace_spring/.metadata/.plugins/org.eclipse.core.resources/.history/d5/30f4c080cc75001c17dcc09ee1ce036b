@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+<section class="myPage_address df">
+    <section class="side_bar"></section>
+    
+    
+   	<section class="address">
+	       <div class="address_top jcsb">
+           	 <h2>주소록</h2>
+             <span id="add_address">+새배송지 추가</span>
+	       </div>
+	   <c:forEach var="dto" items="${list}">
+	       
+	       
+	       <div class="address_detail jcsb aice">
+	           <div class="add_info">
+	               <p>${dto.address_name}</p>
+	               <c:if test="${dto.default_address ne 'N' }">
+	               		<p>기본배송지</p>
+	               	</c:if>
+	               <p>${dto.address_pnum}</p>
+	               <p>${dto.address }</p>			
+	           </div>
+	           
+	           <div class="btns">
+	               <button id="modify_add" data-user="${dto.user_email}">수정</button>
+	               <button  id="delete_add" data-user="${dto.user_email}">삭제</button>
+	           </div>
+	           
+	       </div>
+	       
+	   </c:forEach>
+	   
+    </section>
+       
+</section>
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <span id="add_address">+주소지 추가</span>
+
+    <div class="product_modal_BuySlide">
+        <div class="modal_address">
+            <div class="modal_address_div1">
+                <span>주소 추가하기</span>
+            </div>
+
+            <form id="modal_address_form">
+                <div class="modal_address_section">
+
+                    <div class="modal_address_div2">
+                        <ul>
+                            <li class="ffcl">
+                                <strong class="li_child1">이름</strong>
+                                <input placeholder="수령인 이름" type="text" name="address_name" class="address_alert">
+                            </li>
+                            <li class="ffcl">
+                                <strong class="li_child1">휴대폰 번호</strong>
+                                <input placeholder="-없이 입력" type="number" name="address_pnum" class="address_alert">
+                            </li>
+                            <li class="ffcl">
+                                <div class="li_child1 jcsb">
+                                    <strong>우편번호</strong>
+                                    <input type="button" id="postcode" value="우편번호">
+                                </div>
+                                <input placeholder="우편 번호를 검색하세요" id="postcode_input" readonly="readonly"
+                                    class="address_alert" name="postcode">
+                            </li>
+                            <li class="ffcl">
+                                <strong class="li_child1">주소</strong>
+                                <input placeholder="우편 검색시 자동입력 됩니다" id="roadAddress" readonly="readonly"
+                                    name="user_address">
+                            </li>
+                            <li class="ffcl">
+                                <strong class="li_child1">상세주소</strong>
+                                <input placeholder="건물,아파트 동/호수 입력" id="detailAddress" class="address_alert"
+                                    name="address_detail">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="modal_address_div3">
+                        <label class="aice" style="cursor: pointer;">
+                            <input type="checkbox" value="default" style="zoom: 1.5" name="" id="default_check_address">
+                            <span>기본배송지로 설정</span>
+                        </label>
+                    </div>
+
+                    <div class="modal_address_div4">
+                        <input type="button" id="backAddressModal" value="취소">
+                        <button id="AddressModalsubmit">저장 하기</button>
+                    </div>
+                </div>
+                <input type="hidden" name="user_email" value="dorami@naver.com">
+            </form>
+            
+            <span id="guide" style="color:#999;display:none"></span>
+        </div>
+    </div>
+    
+    
+
+<%@ include file="../footer.jsp"%>
+

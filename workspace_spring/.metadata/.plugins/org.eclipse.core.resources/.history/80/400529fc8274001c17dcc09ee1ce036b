@@ -1,0 +1,19 @@
+package com.itbank.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.itbank.model.AddressDAO;
+
+import com.itbank.model.MypageDTO;
+
+public class AddressService {
+	@Autowired AddressDAO dao;
+
+	public List<MypageDTO> find_address(String user_email) {
+		// TODO Auto-generated method stub
+		return dao.find_address(user_email);
+	}
+
+}

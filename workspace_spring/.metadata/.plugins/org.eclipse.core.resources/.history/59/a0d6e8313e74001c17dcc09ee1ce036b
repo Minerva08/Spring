@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+<section class="myPage_address df">
+<section class="side_bar"></section>
+
+	<section class="address">
+		<h2>주소록</h2>
+		
+		
+	</section>
+
+</section>
+
+
+<%@ include file="../footer.jsp"%>
+
+
+<!-- 주소록 -->

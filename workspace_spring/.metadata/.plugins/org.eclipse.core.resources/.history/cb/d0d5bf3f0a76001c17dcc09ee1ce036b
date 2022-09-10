@@ -1,0 +1,71 @@
+function nowpage(url) {
+	const mypage_a = document.querySelectorAll('.myPage_left > div > ul > li > a')
+	for (let i = 0; i < mypage_a.length; i++) {
+		if (mypage_a[i].getAttribute('href') + '' == url + '') {
+			mypage_a[i].style.color = 'black'
+			mypage_a[i].style.fontWeight = 'bold'
+			return
+		}
+	}
+}
+
+function clickHandler(event) {
+	for (let i = 0; i < border_bottom.length; i++) {
+		if (i === +event.target.dataset.n) {
+			border_bottom[i].classList.add('border_bottom')
+			border_bottom[i].style.paddingBottom = '0px'
+			border_bottom[i].firstElementChild.style.color = 'red'
+			border_bottom[i].lastElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.fontWeight = 'bold'
+		}
+		else {
+			border_bottom[i].classList.remove('border_bottom')
+			border_bottom[i].style.paddingBottom = '2px'
+			border_bottom[i].firstElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.color = 'gray'
+			border_bottom[i].lastElementChild.style.fontWeight = ''
+		}
+	}
+}
+
+function input_originpw(event){
+	const underline=document.querySelector('.origin_pw')
+	underline.style.borderBottom='1px solid black'
+}
+
+function input_newpw(event){
+	const underline=document.getElementById('underline_pw')
+	underline.style.borderBottom='1px solid black'
+}
+
+function input_newnick(event){
+	const underline=document.getElementById('underline_nick')
+	underline.style.borderBottom='1px solid black'
+}
+
+function input_newpnum(event){
+	const underline=document.getElementById('underline_pnum')
+	underline.style.borderBottom='1px solid black'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

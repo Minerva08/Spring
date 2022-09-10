@@ -1,0 +1,134 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+    <section class = "member_join">
+    	
+        <h2>회원가입</h2>
+	
+        <form method="POST">
+            <p>이메일 주소*</p>
+            <div class="email df">
+                <input type="email" class="email" name="user_email" placeholder="e-mail" required="required" autofocus="autofocus" autocomplete="off">
+                <button id="duplicate_email_btn">확인</button>
+            </div>
+	            <p id="msg_email"></p>
+            
+            <p>비밀번호*</p>
+            <div class="pw">
+                <input name="user_pw" type="password" id="password_1" class="user_pw" placeholder="비밀번호">
+            	<p id="alert1"style="display: none;"></p>
+            </div>
+
+            <p>비밀번호 확인*</p>
+            <div class="pw_c">
+                <input type="password" id="password_2" class="user_pw_check" name="user_pw_check"placeholder="비밀번호 확인">
+            	<p id="alert2" style="display: none;"></p>
+            </div>
+
+            <p>닉네임</p>
+            <div class="nickname df">
+                <input type="text" name="user_nickname" placeholder="nickname" required="required" autocomplete="off">
+                <button id="duplicate_nick_btn">확인</button>
+            </div>
+             <p id="msg_nick"></p>
+
+            <p>전화번호*</p>
+            <div class="pnum">
+                <input type="text" name="user_pnum" placeholder="'-'을 제외하고 입력해주십시오" required="required">
+            </div>
+            
+            <p>성별</p>
+            <div class="gender">
+                <label><input type="radio" name="user_gender" value="male" required="required">남성</label>
+                <label><input type="radio" name="user_gender" value="female">여성</label>
+            </div>
+			<p>주소*</p>
+            <div class="join_addr">
+            	<div class="add_1 df jcsb">
+                <input type="text" name="user_postnum"id="user_postnum" placeholder="우편번호">
+                <input type="button" id="find_postnum" onclick="Postcode()" value="우편번호 찾기"><br>
+                </div>
+                <div class="add_2 df jcsb">
+                <input type="text" name="user_address" id="user_address" placeholder="주소"><br>
+                <input type="text" name="user_addressdetail"id="user_addressdetail" placeholder="상세주소">
+                </div>
+                <div id="wrap"></div>
+                <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnFoldWrap" style="cursor:pointer;position:absolute;right:0px;top:-1px;z-index:1" onclick="foldDaumPostcode()" alt="접기 버튼">
+           </div> 
+            <button id="join">가입하기</button>
+            
+        </form>
+    
+    </section>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+
+        
+	window.onload=onload_join
+	btn1.onclick = duplicate_email
+	btn2.onclick =duplicate_nick
+	join.onclick = go_join
+
+</script>
+
+<script>
+    $('.user_pw').focusout(function () {
+    	var email = $(".user_email").val()
+        var pwd1 = $("#password_1").val();
+        var pwd2 = $("#password_2").val();
+        var pw1 = $("#password_1")
+  
+        if (pwd1 == '') {
+            $("#alert1").css('color', 'red');
+            $("#alert1").css('font-size', '12px');
+            $("#alert1").text('비밀번호를 입력해 주세요');
+            $("#alert1").css('display', 'inline-block');
+            pw1.select()
+        } 
+        else if(8> pwd1.length || pwd1.length >15){
+            $("#alert1").text('');
+            $("#alert1").css('color', 'red');
+            $("#alert1").css('font-size', '12px');
+            $("#alert1").text('비밀번호의 길이가 맞지 않습니다');
+            $("#alert1").css('display', 'inline-block');
+            pw1.select()
+        }
+        else if(8 < pwd1.length && pwd1.length <= 15){
+            $("#alert1").text('');
+        }
+        
+    });
+
+
+    $('.user_pw_check').blur(function () {
+        var pwd1 = $("#password_1").val();
+        var pwd2 = $("#password_2").val();
+  
+        if (pwd2 == '' ) {
+            $("#alert2").css('color', 'red');
+            $("#alert2").css('fontSize', '12px');
+            $("#alert2").text('비밀번호를 확인해 주세요');
+            $("#alert2").css('display', 'inline-block');
+        } 
+        if (pwd1 != '' || pwd2 != '') {
+            if (pwd1 == pwd2) {
+                $("#alert2").css('color', 'blue');
+                $("#alert2").css('fontSize', '12px');
+                $("#alert2").text('일치');
+                $("#alert2").css('display', 'inline-block');
+                
+            } else {
+                $("#alert2").css('color', 'red');
+                $("#alert2").css('fontSize', '12px');
+                $("#alert2").text('비밀번호가 일치하지 않습니다');
+                $("#alert2").css('display', 'inline-block');
+                
+            }
+        }
+    });
+</script>
+
+<%@ include file="../footer.jsp"%>
+
+

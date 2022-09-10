@@ -1,0 +1,333 @@
+@charset "utf-8";
+#msg {
+            width: 400px;
+            height: 15px;
+            margin-bottom: 10px;
+        }
+
+        #join {
+            width: 400px;
+            height: 52px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(235, 235, 235);
+            color: white;
+            font-weight: bolder;
+            border: 0;
+            outline: 0;
+        }
+
+		.member_join{
+			margin-top: 270px;
+		}
+		.member_join > h2 {
+           margin-top: 100px;
+           text-align: center;
+           height: 40px;
+           font-size: 32px;
+       }
+
+
+        .member_join>form {
+            width: 400px;
+            height: 430px;
+            padding-top: 30px;
+            padding-bottom: 60px;
+            margin: 0 auto;
+        }
+
+        .member_join>form>p {
+            font-size: 1px;
+            margin-top: 15px;
+        }
+
+        .member_join>form>.email>input, 
+        .member_join>form>.nickname>input,
+        .member_join>form>.pnum>input, 
+        .member_join>form>.sex>input,
+        .member_join>form>.pw>input,
+        .member_join>form>.pw_c>input{
+
+            font-size: 16px;
+            width: 220px;
+            margin-bottom: 5px;
+            padding: 3px 0;
+            border: 0;
+
+        }
+        
+        .member_join>form>.email, .member_join>form>.pw,
+        .member_join>form>.pw_c, .member_join>form>.nickname,
+        .member_join>form>.pnum {
+            font-size: 16px;
+            width: 400px;
+            margin-bottom: 5px;
+            padding: 3px 0;
+            border-bottom: 1px solid darkgrey;
+            
+        }
+
+        .member_join>form>.nickname>#duplicate_nick_btn,
+        .member_join>form>.email>#duplicate_email_btn{
+            width: 40px;
+            font-size: 4px;
+            margin-left: 130px;
+            font-size: 8px;
+            border-radius: 8px;
+            height: 20px;
+            border:0px;
+
+        }
+
+        .member_join>form>.gender{
+            margin-top: 20px;
+        }
+        .member_join>form>.gender>label {
+            font-size: 14px;
+            width: 80px;
+            margin-right: 10px;
+        }
+
+        .member_join>form>.join_addr {
+            margin: 15px 0;
+            width: 300px;
+            height: 65px;
+        }
+       .member_join>form>.join_addr>.add_1{
+       	margin-bottom: 5px;
+       } 
+		.member_join>form>.join_addr>.add_1>#user_postnum,
+		.member_join>form>.join_addr>.add_1>#find_postnum,
+		.member_join>form>.join_addr>.add_2>#user_address,
+		.member_join>form>.join_addr>.add_2>#user_addressdetail{
+			border: none;
+			outline: none;
+		}
+	
+        .member_join>form>.gender>label>input {
+            font-size: 12px;
+        }
+        .member_join > form>.join_addr>#find_postnum{
+        	
+        }
+        #alert1,#alert2{
+            padding: 0%;
+            margin: 5px 0;
+           
+        }
+      
+        .member_join > form > .join_addr>#wrap{
+        	display:none;
+        	border:1px solid;
+        	width:400px;
+        	height:270px;
+        	margin:5px 0;
+        	position:relative;
+        }
+        
+        .member_join > form > .email > #msg_email,
+        .member_join > form > .nickname > #msg_nick{
+        	width: 100px;
+        }
+        
+
+        
+
+  .member_login_main>.main_content {
+            width: 300px;
+            height: 500px;
+            margin:0 auto;
+            margin-top: 200px;
+          
+        }
+
+        .member_login_main>.main_content>.logo {
+            width: 250px;
+            height: 60px;
+            margin: 10px auto;
+            margin-bottom: 40px;
+        }
+
+        .member_login_main>.main_content>form {
+            width: inherit;
+            height: 250px;
+            box-sizing: border-box;
+        }
+
+        .member_login_main>.main_content>form>p {
+            font-size: 13px;
+            font-weight: bold;
+            width: 100px;
+            height: 20px;
+            margin-bottom: 0;
+            
+        }
+
+        .member_login_main>.main_content>form>.input_email, 
+        .member_login_main>.main_content>form>.input_pw{
+           
+            border-bottom: 0.5px solid rgb(235, 235, 235);
+            margin-bottom:15px;
+        }
+
+        .member_login_main>.main_content>form>.input_email>input,
+        .member_login_main>.main_content>form>.input_pw>input {
+            width: 280px;
+            font-size: 16px;
+            margin:10px 0;
+            margin-top: 5px;
+            padding-left: 0px;
+        }
+
+        .member_login_main>.main_content>form>#LOGIN {
+            width: 300px;
+            height: 52px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: rgb(235, 235, 235);
+            color: white;
+            font-weight: bolder;
+            border: 0;
+            outline: 0;
+            margin-top: 30px;
+        }
+
+        .member_login_main >.main_content>ul {
+            list-style: none;
+            padding-left: 0px;
+            display: flex;
+            width: inherit;
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-left: -5px;
+        }
+
+        .member_login_main>.main_content>ul>li {
+            width: 100px;
+            height: 15px;
+            font-size: 13px;
+            text-align: center;
+            border-right: 2px solid darkgrey;
+        }
+
+        .member_login_main>.main_content>ul>li:nth-child(3) {
+            border-right:0;
+        }
+                
+        
+        
+        
+    
+        
+.member_find_email{
+	margin-top: 401px;
+}
+
+.find_email_hidden{
+	display:none;
+}
+.finding_email{
+	display:flex;
+	justify-content: center;
+}
+.email_result{
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+}
+
+
+
+
+
+
+
+	.member_find_pw{
+		width: 600px;
+		height: 800px;
+		margin: 0 auto;
+		margin-top: 150px;
+		box-sizing: border-box;
+	}
+	.member_find_pw > .top{
+		width:400px;
+		border-bottom: 2px solid black;
+		height: 65px;
+		margin: 20px auto;
+	}
+     .member_find_pw > .top>h1 {
+     	 font-size:32px;
+         text-align: center;
+         width:inherit;
+         text-align:center;
+         height: 40px;
+         margin:0 auto;
+         margin-bottom: 32px;
+     }
+     .member_find_pw>.ment{
+     	width: 400px;
+     	height: 70px;
+     	padding-top:20px;
+     	margin:10px auto;
+     }
+     .member_find_pw>.ment>p{
+     	font-size: 14px;
+     	width:inherit;
+     	margin: 5px auto;
+     	
+     }
+
+   .member_find_pw>.find_pw_form {
+         width: 400px;
+         height: 430px;
+         padding-bottom: 60px;
+         margin: 0 auto;
+         
+     }
+
+     .member_find_pw>.find_pw_form>p {
+         font-size: 12px;
+         margin-top: 18px;
+         font-weight: bold;
+     }
+	.member_find_pw>.find_pw_form>.component{
+            height: 40px;
+            border-bottom: 1px solid rgb(235,235,235);
+            margin: 0;
+
+        }
+     .member_find_pw>.find_pw_form>.compnent>input{
+
+         font-size: 18px;
+         width: 300px;
+         margin-bottom: 5px;
+     }
+     
+     .member_find_pw>.find_pw_form>#send_messege {
+		width: 400px;
+		height: 52px;
+		border-radius: 10px;
+		text-align: center;
+		background-color: rgb(235, 235, 235);
+		color: white;
+		font-weight: bolder;
+		border: 0;
+		outline: 0;
+		margin-top: 35px;
+	}
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+
+
+      
+
+      
+ 

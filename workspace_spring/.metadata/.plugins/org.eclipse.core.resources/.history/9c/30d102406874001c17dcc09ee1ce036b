@@ -1,0 +1,130 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+
+<script src="${cpath }/resources/js/mypage.js"></script>
+
+<section class="buyList_section">
+	<div class="buyList_component df">
+		<div class="myPage_left">
+			<h2><a href="${cpath }/myPage/home_myPage">마이 페이지</a></h2>
+			<div>
+				<span>쇼핑 정보</span>
+				<ul>
+					<li><a href="${cpath }/myPage/buyList">구매 내역</a></li>
+					<li><a href="${cpath }/myPage/saleList">판매 내역</a></li>
+					<li><a href="${cpath }/myPage/wishList">관심 상품</a></li>
+				</ul>
+			</div>
+			<div>
+				<span>내 정보</span>
+				<ul>
+					<li><a href="${cpath }/myPage/info">프로필 정보</a></li>
+					<li><a href="${cpath }/myPage/address">주소록</a></li>
+					<li><a href="${cpath }/myPage/account">결제 정보</a></li>
+					<li><a href="">포인터</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<div class="buyList_right">
+			<div class="buyList_r_div1"><h2>구매내역</h2></div>
+			
+			<div class="buyList_r_div2">
+				<ul class="jcsa aice">
+					<li class="event_li" data-n="0">
+						<span data-n="0">0</span>
+						<span data-n="0">구매입찰</span>
+					</li>
+					<li class="event_li" data-n="1">
+						<span data-n="1">0</span>
+						<span data-n="1">진행중</span>
+					</li>
+					<li class="event_li" data-n="2">
+						<span data-n="2">0</span>
+						<span data-n="2">종료</span>
+					</li>
+				</ul>
+				
+				<div class="r_div2_div1 jcce">
+					<div class="aice">
+						<div class=""><span>최근 2개월</span></div>
+						<div><span>4개월</span></div>
+						<div><span>6개월</span></div>
+						<div><span>2022-01-01📅</span></div>
+						<span>~</span>
+						<div><span>2022-01-01📅</span></div>
+						<div><span>조회</span></div>
+					</div>
+				</div>
+				
+				<div class="r_div2_div2">
+					<ul>
+						<li>한 번에 조회 가능한 기간은 최대 6개월입니다.</li>
+						<li>기간별 조회 결과는 입찰일 기준으로 노출됩니다.</li>
+					</ul>
+					
+					<div class="r_div2_div2_nav jcsb aice">
+						<select>
+							<option>전체</option>
+						</select>
+						<div class="df">
+							<div  class="aice">
+								<span>구매희망가</span>
+								<img src="${cpath }/resources/img/data.svg" width="15">
+							</div>
+							<div class="aice jcfe">
+								<span>만료일</span>
+								<img src="${cpath }/resources/img/data.svg" width="15">
+							</div>
+						</div>
+					</div>
+					
+					<div class="r_div2_div2_content">
+						<span>구매입찰내역이 없습니다</span>
+						<button>SHOP바로가기</button>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+<script>
+
+	const border_bottom = document.querySelectorAll('.event_li')
+	const nowurl = window.location.pathname
+
+	nowpage(nowurl)
+	
+	border_bottom.forEach(e => {
+			e.addEventListener('click', clickHandler)
+		})
+
+	function clickHandler(event) {
+		for (let i = 0; i < border_bottom.length; i++) {
+			if (i === +event.target.dataset.n) {
+				border_bottom[i].classList.add('border_bottom')
+				border_bottom[i].style.paddingBottom = '0px'
+				border_bottom[i].firstElementChild.style.color = 'red'
+				border_bottom[i].lastElementChild.style.color = 'black'
+				border_bottom[i].lastElementChild.style.fontWeight = 'bold'
+			}
+			else {
+				border_bottom[i].classList.remove('border_bottom')
+				border_bottom[i].style.paddingBottom = '2px'
+				border_bottom[i].firstElementChild.style.color = 'black'
+				border_bottom[i].lastElementChild.style.color = 'gray'
+				border_bottom[i].lastElementChild.style.fontWeight = ''
+			}
+		}
+	}
+
+</script>
+
+<%@ include file="../footer.jsp"%>
+
+
+<!-- 구매내역 -->

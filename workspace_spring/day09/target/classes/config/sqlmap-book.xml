@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+	"-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.itbank.book.BookDAO">
+	
+	<select id="selectList" resultType="book" parameterType="hashmap">
+		select * from book
+		<if test="column != null">
+			<choose>
+				<when test="column == 'idx'">
+					where ${column} = #{search}
+				</when>
+				<when test="column == 'name' or column == 'author'">
+					where ${column} like '%'||#{search}||'%'
+				</when>
+			</choose>
+		</if> 
+			order by ${order}
+	</select>
+	
+	<update id="update" parameterType="book">
+		update book
+			<set>
+				<if test="name != null">name = #{name},</if>
+				<if test="author != null">author = #{author},</if>
+				<if test="publisher != null">publisher = #{publisher},</if>
+				<if test="publishDate != null">publishDate = #{publishDate},</if>
+				<if test="price != null">price = #{price},</if>
+				<if test="description != null">description = #{description},</if>
+			</set>
+			where
+				idx = #{idx}
+	</update>
+	
+	<insert id="insert" parameterType="book">
+		insert into book values (
+			book_seq.nextval,
+			#{name}, #{author}, #{publisher}, #{publishDate}, #{price}, #{description}		
+		)
+	</insert>
+	
+</mapper>	
+
+
+
+
+
+

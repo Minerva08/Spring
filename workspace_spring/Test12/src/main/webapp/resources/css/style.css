@@ -1,0 +1,27 @@
+@charset "utf-8";
+table.dataTable {
+	border-collapse: collapse;
+	width: 90%;
+	margin: 20px auto;
+	box-shadow: 10px 10px 10px grey;
+	border: 1px solid #aaa;
+}
+table.dataTable th,
+table.dataTable td {
+	padding: 5px 10px;
+	text-align: center;
+	font-weight: 700;
+}
+table.dataTable th {
+	border: 1px solid white;
+}
+table.dataTable tr {
+	border-bottom: 1px solid black;
+}
+table.dataTable > thead > tr {
+	background-color: black;
+	color: white;
+}
+table.dataTable > tbody > tr:hover {
+	background-color: #dadada;
+}

@@ -1,0 +1,91 @@
+package com.itbank.model;
+
+public class MypageDTO {
+	
+   private String user_email;
+   private String user_pw;
+   private String user_nickname;
+   private String user_pnum;
+   private String user_profile_img;
+   
+	private String account;
+	private String bank;
+	private String holder;
+	
+	
+	private String user_name;
+	private String user_address;
+	
+   @Override
+	public String toString() {
+	
+		return String.format("[%s %s %s %s %s %s %s %s %s %s]", user_email,
+				user_pw, user_nickname,user_pnum,user_profile_img, account,
+				bank, holder,user_name, user_address);
+	}
+   
+	public String getUser_name() {
+		return user_name;
+	}
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
+	public String getUser_pw() {
+		return user_pw;
+	}
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
+	}
+	public String getUser_nickname() {
+		return user_nickname;
+	}
+	public void setUser_nickname(String user_nickname) {
+		this.user_nickname = user_nickname;
+	}
+	public String getUser_pnum() {
+		return user_pnum;
+	}
+	public void setUser_pnum(String user_pnum) {
+		this.user_pnum = user_pnum;
+	}
+	public String getUser_profile_img() {
+		return user_profile_img;
+	}
+	public void setUser_profile_img(String user_profile_img) {
+		this.user_profile_img = user_profile_img;
+	}
+	public String getAccount() {
+		return account;
+	}
+	public void setAccount(String account) {
+		this.account = account;
+	}
+	public String getBank() {
+		return bank;
+	}
+	public void setBank(String bank) {
+		this.bank = bank;
+	}
+	public String getHolder() {
+		return holder;
+	}
+	public void setHolder(String holder) {
+		this.holder = holder;
+	}
+	
+	public String getUser_address() {
+		return user_address;
+	}
+	public void setUser_address(String user_address) {
+		this.user_address = user_address;
+	}
+	
+	
+
+}

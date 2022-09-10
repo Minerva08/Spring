@@ -1,0 +1,424 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+   <section class="myPage_profile df">
+        <div class="myPage_left">
+			<h2><a href="${cpath }/myPage/home_myPage">마이 페이지</a></h2>
+			<div>
+				<span>쇼핑 정보</span>
+				<ul>
+					<li><a href="${cpath }/myPage/buyList">구매 내역</a></li>
+					<li><a href="${cpath }/myPage/saleList">판매 내역</a></li>
+					<li><a href="${cpath }/myPage/wishList">관심 상품</a></li>
+				</ul>
+			</div>
+			<div>
+				<span>내 정보</span>
+				<ul>
+					<li><a href="${cpath }/myPage/info">프로필 정보</a></li>
+					<li><a href="${cpath }/myPage/address">주소록</a></li>
+					<li><a href="${cpath }/myPage/account">결제 정보</a></li>
+					<li><a href="">포인터</a></li>
+				</ul>
+			</div>
+		</div>
+    
+        <section class="profile">
+            <div class="profile_top">
+                <h2>프로필 정보</h2>
+            </div>
+            
+            <div class="profile_detail">
+            
+                <div class="detail_top df">
+                
+                    <div class="profile_image">
+                        <img src="${info.user_profile_img}">
+                    </div>
+                    
+                    <div class="profile_email">
+                        <div class="id">${info.user_nickname}</div>
+                        <div class="top_btns df">
+                        	<form>
+	                            <button id="change_img">이미지 변경</button>
+                        	</form>
+                            <button id="delete_img" data-email="${login.user_email}">삭제</button>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+                <h3>로그인 정보</h3>
+                
+                <p class="category">이메일 주소</p>
+                <div class="profile_login ">
+                    <p>${info.user_email }</p>
+                </div>
+                
+                <p class="category">비밀번호</p>
+                <div class="profile_pw ">
+                    <div class="profile_info_pw jcsb">
+                        <p>${info.user_pw }</p>
+                        <button id="change_pw">변경</button>
+                    </div>
+
+                    <div class="profile_info_pw_change hidden ">
+                        <div class="origin_pw">
+                            <p class="info_modify">현재비밀번호</p>
+                            <input type="password" id="set_originpw"placeholder="영문,숫자,특수문자 조합 8-16자">
+                        </div>
+                        <form class="new_pw">
+                            <p class="info_modify">변경할 비밀번호</p>
+                            <input type="password" name="user_pw" id="set_newpw"  placeholder="영문,숫자,특수문자 조합 8-16자">
+                            <p style="border-bottom:1px solid darkgrey; margin: 3px auto;"></p>
+                            <div class="btns df">
+                                <button id="save_pw" data-email="${login.user_email}">저장</button>
+	                   			 <button id="cancel_pw">취소</button>
+                            </div>
+                        </form>                
+                    </div>
+                    
+                </div>
+                
+                <h3>개인 정보</h3>
+             
+                
+                <p class="category">이름</p>
+                <div class="profile_nickname ">
+                    <div class="profile_info_nickname jcsb">
+                        <p>${info.user_nickname }</p>
+                        <button id="change_nickname">변경</button>
+                    </div>
+
+                    <div class="profile_info_nick_change hidden">
+                        <p class="info_modify">새로운 닉네임</p>
+                        <form class="new_nick">
+                            <input name="user_nickname" id="set_nick" type="text" placeholder="고객님 이름"> 
+                            <p style="border-bottom:1px solid darkgrey;"></p>
+                            <div class="btns df">
+                                <button id="save_nick" data-email="${login.user_email}">저장</button>
+		                        <button id="cancel_nick">취소</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <p class="category">휴대폰 번호</p>
+                <div class="profile_pnum ">
+                    <div class="profile_info_pnum jcsb">
+                        <p>${info.user_pnum}</p>
+                        <button id="change_pnum">변경</button>
+                    </div>
+
+                    <div class="profile_info_pnum_change hidden">
+                        <p class="info_modify">변경할 번호</p>
+                        <form class="new_pnum">
+                            <input name="user_pnum" type="text" id="set_pnum" placeholder="'-'제외하고 입력하세요">
+                            <p style="border-bottom:1px solid darkgrey;"></p>
+                            <div class="btns df">
+                                <button id="save_pnum" data-email="${login.user_email}">저장</button>
+		                        <button id="cancel_pnum">취소</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            
+            </div>
+            <a href="" style="text-decoration: underline;">회원탈퇴</a>
+        </section>
+   </section>
+   <script src="http://code.jquery.com/jquery-latest.min.js"></script><!--jquery용 라이브러리 -->
+   <script>
+       const pw_c = document.getElementById('change_pw')
+       const nick_c = document.getElementById('change_nickname')
+       const pnum_c = document.getElementById('change_pnum')
+
+       const profile_info_pw = document.querySelector('.profile_info_pw')
+       const profile_info_pw_change = document.querySelector('.profile_info_pw_change')
+       const profile_info_nickname = document.querySelector('.profile_info_nickname')
+       const profile_info_nick_change = document.querySelector('.profile_info_nick_change')
+       const profile_info_pnum = document.querySelector('.profile_info_pnum')
+       const profile_info_pnum_change = document.querySelector('.profile_info_pnum_change')
+
+       const profile_pw = document.querySelector('.profile_pw')
+       const profile_nickname= document.querySelector('.profile_nickname')
+       const profile_pnum = document.querySelector('.profile_pnum')
+	
+       const set_originpw = document.getElementById('set_originpw')
+       const set_newpw = document.getElementById('set_pw')
+       const set_nick = document.getElementById('set_nick')
+       const set_pnum = document.getElementById('set_pnum')
+       
+       console.log(set_originpw)
+       
+      
+     
+        
+        pw_c.onclick=function(){
+            profile_info_pw.classList.add('hidden')
+            profile_pw.style.height='190px'
+            profile_pw.style.borderBottom='none'
+            profile_info_pw_change.classList.remove('hidden')  
+            profile_info_pw_change.style.marginTop='30px'      
+        }
+
+        nick_c.onclick=function(){
+            profile_info_nickname.classList.add('hidden')
+            profile_nickname.style.height='130px'
+            profile_nickname.style.borderBottom='none'
+            profile_info_nick_change.classList.remove('hidden')
+            profile_info_nick_change.style.marginTop='30px'    
+        }
+
+        pnum_c.onclick=function(){
+            profile_info_pnum.classList.add('hidden')
+            profile_pnum.style.height='130px'
+            profile_pnum.style.borderBottom='none'
+            profile_info_pnum_change.classList.remove('hidden')  
+            profile_info_pnum_change.style.marginTop='30px'  
+        }
+
+
+    </script>
+
+    <script>
+        const cancel_pnum = document.getElementById('cancel_pnum')
+        const cancel_nickname = document.getElementById('cancel_nick')
+        const cancel_pw = document.getElementById('cancel_pw')
+
+        const input_p = document.querySelector('.profile_info_pnum_change')
+        const input_n = document.querySelector('.profile_info_nick_change')
+        const input_pw = document.querySelector('.profile_info_pw_change')
+
+        const origin_pw = document.querySelector('.profile_info_pw')
+        const origin_n = document.querySelector('.profile_info_nickname')
+        const origin_p = document.querySelector('.profile_info_pnum')
+
+        const pnum = document.querySelector('.profile_pnum')
+        const pw = document.querySelector('.profile_pw')
+        const nickname = document.querySelector('.profile_nickname')
+
+
+        cancel_pnum.onclick=function(event){
+            event.preventDefault()
+            event.stopPropagation() 
+            input_p.classList.add('hidden')
+            origin_p.classList.remove('hidden')
+            pnum.style.height='50px'
+            pnum.style.borderBottom='1px solid darkgrey'
+
+        }
+        
+        cancel_nickname.onclick=function(event){
+            event.preventDefault()
+            event.stopPropagation() 
+            input_n.classList.add('hidden')
+            origin_n.classList.remove('hidden')
+            nickname.style.height='50px'
+            nickname.style.borderBottom='1px solid darkgrey'
+
+        }
+        
+        cancel_pw.onclick=function(event){
+            event.preventDefault()
+            event.stopPropagation() 
+            input_pw.classList.add('hidden')
+            origin_pw.classList.remove('hidden')
+            pw.style.height='50px'
+            pw.style.borderBottom='1px solid darkgrey'
+
+        }
+
+    </script>
+    
+   <script>
+   		const form_pw = document.forms[2]
+   		const form_nick = document.forms[3]
+   		const form_pnum = document.forms[4]
+   		
+   		const c_pnum = document.getElementById('save_pnum')
+   		const c_pw = document.getElementById('save_pw')
+   		const c_nick = document.getElementById('save_nick')
+   		
+   		
+   		const img_D = document.getElementById('delete_img')
+   		
+   		 img_D.onclick=function(){
+   			
+   			const email = img_D.dataset.email
+   			const alarm = confirm("이미지를 삭제하시겠습니까?")
+   			if(alarm){
+   				const hashmap = new HashMap();
+
+   				hashmap.set('user_email', email);
+   				
+   				const ob=[]
+   				ob.push(hashmap)
+   				console.log(ob)
+   	   			
+   	   			
+   	   			const url = cpath + '/ProfileImgDelete'
+   	   			const opt = {
+   	   				method: 'POST',
+   	   				body: JSON.stringify(ob),
+   	   				headers: {
+   	   					'Content-Type': 'application/json; charset=utf-8'
+   	   				}
+   	   			}
+   	   			
+   	   			// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+   	   			fetch(url, opt)
+   	   			.then(resp => resp.text())
+   	   			.then(text => {	
+   	   				if(text == 1) {
+   	   					alert('삭제 되었습니다.')
+   	   					location.replace("/main/myPage/info/update")
+   	   				}
+   	   				
+   	   			})
+   			}
+   			
+   		}
+   		 
+   		
+   		
+   		form_pw.onsubmit=function(event){
+   			event.preventDefault()
+   			
+   			
+   			const ob = {}	
+   			const formData = new FormData(event.target)
+   			formData.append('user_email',c_pw.dataset.email);
+   			
+   			for(key of formData.keys()) {
+  	 			console.log(key,': ',formData.get(key))
+   				ob[key] = formData.get(key)
+   			}
+   			
+   			
+   		
+   			const url = cpath + '/modifyPw'
+   			const opt = {
+   				method: 'POST',
+   				body: JSON.stringify(ob),
+   				headers: {
+   					'Content-Type': 'application/json; charset=utf-8'
+   				}
+   			}
+   			
+   			// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+   			fetch(url, opt)
+   			.then(resp => resp.text())
+   			.then(text => {
+   					console.log(text)
+   				if(text == 1) {
+   					alert('비밀번호 변경')
+   					location.replace("/main/myPage/info/update")
+   				}
+   				else {
+   					alert('변경 실패')
+   					
+   				}
+   				
+   			})
+   			
+   			
+   	
+   		}
+   		
+   		form_nick.onsubmit=function(event){
+   			event.preventDefault()
+   			
+   			
+   			const ob = {}	
+   			const formData = new FormData(event.target)
+   			formData.append('user_email',c_nick.dataset.email);
+   			
+   			for(key of formData.keys()) {
+  	 			console.log(key,': ',formData.get(key))
+   				ob[key] = formData.get(key)
+   			}
+   			
+   		
+   			const url = cpath + '/modifyNick'
+   			const opt = {
+   				method: 'POST',
+   				body: JSON.stringify(ob),
+   				headers: {
+   					'Content-Type': 'application/json; charset=utf-8'
+   				}
+   			}
+   			
+   			// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+   			fetch(url, opt)
+   			.then(resp => resp.text())
+   			.then(text => {
+   				console.log(text)
+   				if(text == 1) {
+   					alert('닉네임변경')
+   					location.replace("/main/myPage/info/update")
+   				}
+   				else {
+   					alert('변경 실패')
+   					
+   				}
+   				
+   			})
+   			
+   			
+   	
+   		}
+   		
+   		
+   		form_pnum.onsubmit=function(event){
+   			event.preventDefault()
+   	
+   			const ob = {}	
+   			const formData = new FormData(event.target)
+   			formData.append('user_email',c_pnum.dataset.email);
+   			
+   			for(key of formData.keys()) {
+   	 			console.log(key,': ',formData.get(key))
+   				ob[key] = formData.get(key)
+   			}
+   			console.log(ob)
+   		
+   			const url = cpath + '/modifyPnum'
+   			const opt = {
+   				method: 'POST',
+   				body: JSON.stringify(ob),
+   				headers: {
+   					'Content-Type': 'application/json; charset=utf-8'
+   				}
+   			}
+   			
+   			// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+   			fetch(url, opt)
+   			.then(resp => resp.text())
+   			.then(text => {
+   				console.log(text)
+   				if(text == 1) {
+   					alert('전화번호변경')
+   					location.replace("/myPage/info/update")
+   				
+   				}
+   				else {
+   					alert('변경 실패')
+   					
+   				}
+   			})
+   		}
+   		
+   </script>
+   <script>
+	   const nowurl = window.location.pathname
+	
+		nowpage(nowurl)
+	   
+   </script>
+    
+<%@ include file="../footer.jsp"%>
+
+
+

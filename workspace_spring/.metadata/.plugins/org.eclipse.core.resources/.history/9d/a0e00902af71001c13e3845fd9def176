@@ -1,0 +1,27 @@
+package com.itbank.model;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+
+public interface MemberDAO {
+
+	@Select("select * from member where user_email = #{user_email} and user_pw =#{user_pw}")
+	MemberDTO isMember(MemberDTO dto);
+
+	
+	@Insert("insert into member(user_email, user_pw, user_nickname, user_pnum,user_gender)"
+			+ " values(#{user_email},#{user_pw}, #{user_nickname}, #{user_pnum}, #{user_gender})")
+	int joinMember(MemberDTO dto);
+
+	@Select("select * from member where user_nickname = #{user_nickname}")
+	MemberDTO isNickName(String user_nickname);
+
+	@Select("select * from member where user_pnum =#{pnum}")
+	String getEmail(String pnum);
+	
+	@Select("select * from member where user_email=#{user_email}")
+	MemberDTO isEmail(String user_email);
+
+	
+
+}

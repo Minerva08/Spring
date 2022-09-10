@@ -1,0 +1,73 @@
+function nowpage(url) {
+	const mypage_a = document.querySelectorAll('.myPage_left > div > ul > li > a')
+	for (let i = 0; i < mypage_a.length; i++) {
+		if (mypage_a[i].getAttribute('href') + '' == url + '') {
+			mypage_a[i].style.color = 'black'
+			mypage_a[i].style.fontWeight = 'bold'
+			return
+		}
+	}
+}
+
+function clickHandler(event) {
+	for (let i = 0; i < border_bottom.length; i++) {
+		if (i === +event.target.dataset.n) {
+			border_bottom[i].classList.add('border_bottom')
+			border_bottom[i].style.paddingBottom = '0px'
+			border_bottom[i].firstElementChild.style.color = 'red'
+			border_bottom[i].lastElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.fontWeight = 'bold'
+		}
+		else {
+			border_bottom[i].classList.remove('border_bottom')
+			border_bottom[i].style.paddingBottom = '2px'
+			border_bottom[i].firstElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.color = 'gray'
+			border_bottom[i].lastElementChild.style.fontWeight = ''
+		}
+	}
+}
+
+function origin_pw_check(){
+	const  = $("#set_originpw").val();
+    const msg = $("#msg_set_originpw")
+
+    if (pw == '') {
+    	msg.css('color', 'red');
+    	msg.css('font-size', '12px');
+    	msg.css('display', 'inline-block');
+    	msg.css('margin', '0');
+    	msg.text('일치');
+    } 
+    else {
+    	msg.text('');
+    	msg.css('color', 'red');
+    	msg.css('font-size', '12px');
+    	msg.css('display', 'inline-block');
+    	msg.css('margin', '0');
+    	msg.text('현재비밀번호가 일치하지 않습니다.');
+        pw.focus()
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

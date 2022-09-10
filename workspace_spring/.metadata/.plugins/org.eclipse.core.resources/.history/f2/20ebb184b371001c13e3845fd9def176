@@ -1,0 +1,74 @@
+package com.itbank.service;
+
+<<<<<<< HEAD
+import java.util.HashMap;
+
+=======
+
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.mail.HtmlEmail;
+>>>>>>> branch 'master' of https://github.com/itbankTeam2/MainProject.git
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.itbank.model.MemberDAO;
+import com.itbank.model.MemberDTO;
+
+@Service
+public class MemberService {
+
+	@Autowired MemberDAO dao;
+	
+	public MemberDTO isMember(MemberDTO dto) {
+		return dao.isMember(dto);
+		
+	}
+
+	public int join(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.joinMember(dto);
+	}
+	
+
+	public MemberDTO duplicate_nickname(String user_nickname) {
+		
+		return dao.isNickName(user_nickname);
+	}
+
+	public String getEmail(String pnum) {
+		// TODO Auto-generated method stub
+		return dao.getEmail(pnum);
+	}
+	
+
+	
+	public MemberDTO duplicate_email(String user_email) {
+		
+		return dao.isEmail(user_email);
+	}
+	
+	//이메일발송
+	
+
+
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	public MemberDTO loginCheck(HashMap<String, String> map) {
+		// TODO Auto-generated method stub
+		return dao.loginCheck(map);
+	}
+
+	
+	
+}

@@ -1,0 +1,74 @@
+function nowpage(url) {
+	const mypage_a = document.querySelectorAll('.myPage_left > div > ul > li > a')
+	for (let i = 0; i < mypage_a.length; i++) {
+		if (mypage_a[i].getAttribute('href') + '' == url + '') {
+			mypage_a[i].style.color = 'black'
+			mypage_a[i].style.fontWeight = 'bold'
+			return
+		}
+	}
+}
+
+function clickHandler(event) {
+	for (let i = 0; i < border_bottom.length; i++) {
+		if (i === +event.target.dataset.n) {
+			border_bottom[i].classList.add('border_bottom')
+			border_bottom[i].style.paddingBottom = '0px'
+			border_bottom[i].firstElementChild.style.color = 'red'
+			border_bottom[i].lastElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.fontWeight = 'bold'
+		}
+		else {
+			border_bottom[i].classList.remove('border_bottom')
+			border_bottom[i].style.paddingBottom = '2px'
+			border_bottom[i].firstElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.color = 'gray'
+			border_bottom[i].lastElementChild.style.fontWeight = ''
+		}
+	}
+}
+
+function join_pw(){
+	 const pwd1 = $("#password_1").val();
+    const pwd2 = $("#password_2").val();
+    const pw1 = $("#password_1")
+
+    if (pwd1 == '') {
+        $("#alert1").css('color', 'red');
+        $("#alert1").css('font-size', '12px');
+        $("#alert1").text('비밀번호를 입력해 주세요');
+        $("#alert1").css('display', 'inline-block');
+    } 
+    else if(8> pwd1.length || pwd1.length >15){
+        $("#alert1").text('');
+        $("#alert1").css('color', 'red');
+        $("#alert1").css('font-size', '12px');
+        $("#alert1").text('비밀번호의 길이가 맞지 않습니다');
+        $("#alert1").css('display', 'inline-block');
+        pw1.focus()
+    }
+    else if(8 < pwd1.length && pwd1.length <= 15){
+        $("#alert1").text('');
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

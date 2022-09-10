@@ -1,0 +1,28 @@
+package com.itbank.model;
+
+public class AddressDTO {
+	
+	private String user_email;
+	private String user_postnum;
+	private String user_address;
+	
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
+	public String getUser_postnum() {
+		return user_postnum;
+	}
+	public void setUser_postnum(String user_postnum) {
+		this.user_postnum = user_postnum;
+	}
+	public String getUser_address() {
+		return user_address;
+	}
+	public void setUser_address(String user_address) {
+		this.user_address = user_address;
+	}
+	
+}

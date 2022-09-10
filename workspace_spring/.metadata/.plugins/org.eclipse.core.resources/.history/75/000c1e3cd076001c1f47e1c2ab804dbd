@@ -1,0 +1,206 @@
+    
+function onload_join(event){
+	 email.style.border='0'
+     email.style.outline='none'
+
+     pw.style.border='0'
+     pw.style.outline='none'
+
+     pw_check.style.border='0'
+     pw_check.style.outline='none'
+
+     nickname.style.border='0'
+     nickname.style.outline='none'
+
+     pnum.style.border='0'
+     pnum.style.outline='none' 
+         
+}
+
+
+function duplicate_email(event){
+	 event.preventDefault()
+	 const join_email=email.value
+
+	    if(join_email==''){
+	    	msg_email.innerText = '이메일을 입력해 주세요'
+	        msg_email.style.color = 'red'
+	        email.focus()
+	        return
+	    }
+	    else if(!join_email.includes('@')){
+	 		msg_email.innerText = '이메일 형식에 맞지않습니다'
+		    msg_email.style.color = 'red'
+		    email.select()
+		    return
+	 	}
+	 
+	    
+	    let url = cpath+'/email_check?user_email='+email.value
+	    const opt={
+	        method:'GET'
+	    }
+
+	    fetch(url, opt)
+	    .then(resp => resp.json())
+	    .then(json => {
+	        msg_email.innerText = json.msg
+	        msg_email.style.color = json.color
+	        if(msg_email.style.color=='red'){
+		    	email.value=''
+		    	return
+		    }
+	        else{
+	        	count+=1
+	        }
+	        
+	        
+	    })
+	    
+	   
+}
+
+function duplicate_nick(event){
+	event.preventDefault()
+	
+    if(nickname.value==''){
+       msg_nick.innerText='닉네임을 입력해주세요'
+    	   msg_nick.style.color='red'
+        nickname.focus()
+        return
+    }
+  
+    let url = cpath+'/nickname_check?user_nickname='+nickname.value
+    console.log(url)
+    const opt={
+        method:'GET'
+    }
+
+    fetch(url, opt)
+    .then(resp => resp.json())
+    .then(json => {
+        console.log(typeof json)
+        msg_nick.innerText = json.msg
+        msg_nick.style.color=json.color
+        if(msg_nick.style.color=='red'){
+	    	nickname.value=''
+	    	return
+	    }
+        else{
+        	pnum.focus()
+        	count+=2
+        }
+    })
+
+}
+
+
+function go_join(event){
+	if(count==2||count==0){
+		alert('이메일 중복 확인을 해주세요')
+		history.go(-1)
+	}
+	else if(count==1){
+		alert('닉네임 중복 확인을 해주세요')
+		history.go(-1)
+	}
+	
+}
+
+function go_login(event){
+	  if(email.value==''){
+         alert('이메일을 입력해 주세요')
+         email.focus()
+	 }
+	 else if(pw.value==''){
+		 alert('비밀번호를 입력해 주세요')
+         pw.focus()
+     }
+}
+
+
+function onload_login(event){
+	if (msg != '') {
+		alert(msg)
+	}
+	
+     email.style.border='none'
+     email.style.outline='none'
+     pw.style.border='none'
+     pw.style.outline='none'
+}
+
+function find_email(event){
+	form.style.borderBottom='1px solid black'
+}
+
+
+function onload_findpw(event){
+	email.style.border='none'
+	email.style.outline='none'
+}
+
+function join_pw(){
+	 const pwd1 = $("#password_1").val();
+     const pwd2 = $("#password_2").val();
+     const pw1 = $("#password_1")
+
+     if (pwd1 == '') {
+         $("#alert1").css('color', 'red');
+         $("#alert1").css('font-size', '12px');
+         $("#alert1").text('비밀번호를 입력해 주세요');
+         $("#alert1").css('display', 'inline-block');
+     } 
+     else if(8> pwd1.length || pwd1.length >15){
+         $("#alert1").text('');
+         $("#alert1").css('color', 'red');
+         $("#alert1").css('font-size', '12px');
+         $("#alert1").text('비밀번호의 길이가 맞지 않습니다');
+         $("#alert1").css('display', 'inline-block');
+         pw1.focus()
+     }
+     else if(8 < pwd1.length && pwd1.length <= 15){
+         $("#alert1").text('');
+     }
+}
+
+function join_pwcheck(){
+	const pwd1 = $("#password_1").val();
+    const pwd2 = $("#password_2").val();
+    const pw2 = $("#password_2")
+    if (pwd2 == '' ) {
+        $("#alert2").css('color', 'red');
+        $("#alert2").css('fontSize', '12px');
+        $("#alert2").text('비밀번호를 확인해 주세요');
+        $("#alert2").css('display', 'inline-block');
+    } 
+    if (pwd1 != '' || pwd2 != '') {
+    	
+    		if (pwd1 == pwd2) {
+    			$("#alert2").css('color', 'blue');
+    			$("#alert2").css('fontSize', '12px');
+    			$("#alert2").text('일치');
+    			$("#alert2").css('display', 'inline-block');
+    			
+    		} 
+    		else {
+    			$("#alert2").css('color', 'red');
+    			$("#alert2").css('fontSize', '12px');
+    			$("#alert2").text('비밀번호가 일치하지 않습니다');
+    			$("#alert2").css('display', 'inline-block');
+    			
+    			
+    		}
+    		
+    }
+}
+
+
+function join_end(){
+	var addressdetail = $('#user_addressdetail').val();
+    if(addressdetail !=''){
+    	$("#join").css('background-color','black');
+    }
+}
+
+

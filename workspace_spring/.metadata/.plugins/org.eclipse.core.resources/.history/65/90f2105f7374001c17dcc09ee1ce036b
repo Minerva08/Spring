@@ -1,0 +1,44 @@
+package com.itbank.model;
+
+public class MypageDTO {
+	
+   private String user_email;
+   private String user_pw;
+   private String user_nickname;
+   private String user_pnum;
+   private String user_profile_img;
+   
+   
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
+	public String getUser_pw() {
+		return user_pw;
+	}
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
+	}
+	public String getUser_nickname() {
+		return user_nickname;
+	}
+	public void setUser_nickname(String user_nickname) {
+		this.user_nickname = user_nickname;
+	}
+	public String getUser_pnum() {
+		return user_pnum;
+	}
+	public void setUser_pnum(String user_pnum) {
+		this.user_pnum = user_pnum;
+	}
+	public String getUser_profile_img() {
+		return user_profile_img;
+	}
+	public void setUser_profile_img(String user_profile_img) {
+		this.user_profile_img = user_profile_img;
+	}
+	
+
+}

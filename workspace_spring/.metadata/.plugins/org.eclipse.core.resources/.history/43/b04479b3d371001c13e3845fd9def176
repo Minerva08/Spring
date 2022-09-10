@@ -1,0 +1,98 @@
+package com.itbank.model;
+
+public class MemberDTO {
+	
+
+	   private String user_email;
+	   private String user_pw;
+	   private String user_nickname;
+	   private String user_address;
+	   private String user_bank;
+	   private String user_account;
+	   private String user_pnum;
+	   private String user_holder;
+	   private String user_profile_img;
+	   private String user_gender;
+	   private String user_join_date;
+	   private String member_out;
+	   
+	   @Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return String.format("%s %s", user_email,user_pw)
+	}
+	   
+	   public String getUser_email() {
+	      return user_email;
+	   }
+	   public void setUser_email(String user_email) {
+	      this.user_email = user_email;
+	   }
+	   public String getUser_pw() {
+	      return user_pw;
+	   }
+	   public void setUser_pw(String user_pw) {
+	      this.user_pw = user_pw;
+	   }
+	   public String getUser_nickname() {
+	      return user_nickname;
+	   }
+	   public void setUser_nickname(String user_nickname) {
+	      this.user_nickname = user_nickname;
+	   }
+	   public String getUser_address() {
+	      return user_address;
+	   }
+	   public void setUser_address(String user_address) {
+	      this.user_address = user_address;
+	   }
+	   public String getUser_bank() {
+	      return user_bank;
+	   }
+	   public void setUser_bank(String user_bank) {
+	      this.user_bank = user_bank;
+	   }
+	   public String getUser_account() {
+	      return user_account;
+	   }
+	   public void setUser_account(String user_account) {
+	      this.user_account = user_account;
+	   }
+	   public String getUser_pnum() {
+	      return user_pnum;
+	   }
+	   public void setUser_pnum(String user_pnum) {
+	      this.user_pnum = user_pnum;
+	   }
+	   public String getUser_holder() {
+	      return user_holder;
+	   }
+	   public void setUser_holder(String user_holder) {
+	      this.user_holder = user_holder;
+	   }
+	   public String getUser_profile_img() {
+	      return user_profile_img;
+	   }
+	   public void setUser_profile_img(String user_profile_img) {
+	      this.user_profile_img = user_profile_img;
+	   }
+	   public String getUser_gender() {
+	      return user_gender;
+	   }
+	   public void setUser_gender(String user_gender) {
+	      this.user_gender = user_gender;
+	   }
+	   public String getUser_join_date() {
+	      return user_join_date;
+	   }
+	   public void setUser_join_date(String user_join_date) {
+	      this.user_join_date = user_join_date;
+	   }
+	   public String getMember_out() {
+	      return member_out;
+	   }
+	   public void setMember_out(String member_out) {
+	      this.member_out = member_out;
+	   }
+	
+}

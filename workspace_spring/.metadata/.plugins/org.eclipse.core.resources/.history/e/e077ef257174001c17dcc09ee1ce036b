@@ -1,0 +1,22 @@
+package com.itbank.model;
+
+public class MemberDTO {
+	
+	   private String user_email;
+	   private String user_pw;
+	   private String user_nickname;
+	   private String user_address;
+	   private String user_pnum;
+	   private String user_profile_img;
+	   private String user_gender;
+	   private String user_join_date;
+	   private String member_out;
+	   
+	   @Override
+	public String toString() {
+		return String.format("%s %s", user_email,user_pw);
+	}
+
+	   
+  
+}

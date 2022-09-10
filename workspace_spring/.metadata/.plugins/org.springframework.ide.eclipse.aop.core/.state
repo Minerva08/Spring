@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="day02"/>
+<aop-project name="day06"/>
+<aop-project name="day17"/>
+<aop-project name="mcDelevery"/>
+<aop-project name="Test12"/>
+<aop-project name="API_1"/>
+<aop-project name="corona"/>
+<aop-project name="crawling"/>
+<aop-project name="day13(2)"/>
+<aop-project name="ws02"/>
+<aop-project name="AjaxPractice"/>
+<aop-project name="day01"/>
+<aop-project name="day05"/>
+<aop-project name="day09"/>
+<aop-project name="day12"/>
+<aop-project name="day16"/>
+<aop-project name="day09_file"/>
+<aop-project name="test10"/>
+<aop-project name="wheather"/>
+<aop-project name="sftp"/>
+<aop-project name="ws01"/>
+<aop-project name="ws05"/>
+<aop-project name="day08"/>
+<aop-project name="day11"/>
+<aop-project name="day15"/>
+<aop-project name="Get_File_Linux"/>
+<aop-project name="day04_myBatis"/>
+<aop-project name="ws04"/>
+<aop-project name="project2.1"/>
+<aop-project name="day03"/>
+<aop-project name="day07"/>
+<aop-project name="day10"/>
+<aop-project name="day14"/>
+<aop-project name="day03Book"/>
+<aop-project name="ws03"/>
+<aop-project name="board"/>
+</aop-reference-model>

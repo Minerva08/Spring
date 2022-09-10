@@ -1,0 +1,39 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+ <section class="myPage_address df">
+    <section class="side_bar"></section>
+    
+    
+   	<section class="address">
+	       <div class="address_top jcsb">
+	           <h2>주소록</h2>
+	           <button id="add_add" data-user="${dto.user_email}">+새 배송지 추가</button>
+	       </div>
+	   <c:forEach var="dto" items="${list}">
+	       
+	       
+	       <div class="address_detail jcsb aice">
+	           <div class="add_info">
+	               <p>${dto.address_name}</p>
+	               <p>${dto.address_pnum}</p>
+	               <p>${dto.address }</p>			
+	           </div>
+	           
+	           <div class="btns">
+	               <button id="modify_add" data-user="${dto.user_email}">수정</button>
+	               <button  id="delete_add" data-user="${dto.user_email}">삭제</button>
+	           </div>
+	           
+	       </div>
+	       
+	   </c:forEach>
+    </section>
+       
+       
+       
+       
+</section>
+
+<%@ include file="../footer.jsp"%>
+

@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+
+<section class="member_alert">
+	<div id="alert" class="jcce aice flcl">
+		<div class="msg">
+			${msg }
+		</div>
+		<p class="close jcfe"><button class="btn">X</button></p>
+	</div>
+</section>
+
+<section class="member_login_main">
+        <div class="main_content">
+            <div class="logo">로고</div>
+            <form method="POST">
+                <p>이메일 주소</p>
+                <div class="input_email">
+                    <input type="email" name="user_email" placeholder="e-mail">
+                </div>
+                
+                <p>비밀번호</p>
+                <div class="input_pw">
+                    <input type="password" name="user_pw" placeholder="password" >
+                </div>
+           
+                <button id="LOGIN">로그인</button>
+
+            </form>
+          
+            <ul  class ="login_bottom">
+                <li><a href = "${cpath }/member/join">회원 가입</a></li>
+                <li><a href = "${cpath }/member/find_email">이메일 찾기</a></li>
+                <li><a href = "${cpath }/member/find_pw">비밀번호 찾기</a></li>
+            </ul>
+           
+        </div>
+</section>
+
+<script>
+	const cpath = '${cpath}'
+	const msg = '${msg}'
+	const url = '${url}'
+	const alert = document.getElementById('alert')
+	
+	const clientWidth = document.body.clientWidth
+	const alertWidth = alert.clientWidth
+	const left = (clientWidth / 2) - (alertWidth / 2)
+	
+	window.onload = function(event) {
+		
+		alert.style.left = left + 'px'
+		console.log('onload !!')
+		alert.style.opacity = 1;
+		alert.style.top = '30%'
+	}
+	
+	document.querySelector('button').onclick = function() {
+		console.log('x')
+		if(url == '') {
+	 		history.go(-1);
+	 	}
+	 	else {
+	 		location.href = cpath + '/' + url
+	 	}
+	}
+
+</script>
+<%@ include file="../footer.jsp"%>

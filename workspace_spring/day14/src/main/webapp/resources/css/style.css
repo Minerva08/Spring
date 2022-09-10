@@ -1,0 +1,36 @@
+@charset "utf-8";
+body {
+	width: 100%;
+	overflow-x: hidden;
+}
+section {
+	box-sizing: border-box;
+}
+#list {
+	background-color: #f5f6f7;
+	width: 900px;
+	height: 700px;
+	margin: auto;
+	overflow-y: scroll; 
+}
+.item {
+	background-color: #dadada;	
+	padding: 10px;
+	margin: 20px auto;
+	box-sizing: border-box;
+	width: 720px;
+	cursor: pointer;
+}
+.item > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+
+
+
+
+
+

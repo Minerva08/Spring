@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [01/Jun/2022:00:46:11 +0900] "GET /project2.1/product/product_detail?modelnum=126613LB HTTP/1.1" 200 101593
+0:0:0:0:0:0:0:1 - - [01/Jun/2022:00:46:20 +0900] "GET /project2.1/myPage/home_myPage HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [01/Jun/2022:00:46:20 +0900] "GET /project2.1/member/login HTTP/1.1" 200 30051
+0:0:0:0:0:0:0:1 - - [01/Jun/2022:12:48:28 +0900] "GET / HTTP/1.1" 404 807

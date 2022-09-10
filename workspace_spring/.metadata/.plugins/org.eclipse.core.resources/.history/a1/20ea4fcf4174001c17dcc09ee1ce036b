@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+ <section class="myPage_address df">
+    <section class="side_bar"></section>
+    
+      <section class="address">
+          
+          <div class="address_top df">
+              <h3>주소록</h3>
+              <button id="add_add" data-user="${info.user_email}">+새 배송지 추가</button>
+          </div>
+          
+          <div class="address_detail df">
+              <div class="add_info">
+                  <p>${info.user_name }</p>
+                  <p>${info.user_pnum}</p>
+                  <p>(${info.user_postnum})${info.user_address}${info.user_addressdetail}</p>			
+              </div>
+              
+              <div class="btns">
+                  <button id="modify_add" data-user="${info.user_email}">수정</button>
+                  <button  id="delete_add" data-user="${info.user_email}">삭제</button>
+              </div>
+              
+          </div>
+       </section>
+</section>
+
+<%@ include file="../footer.jsp"%>
+
+
+<!-- 주소록 -->

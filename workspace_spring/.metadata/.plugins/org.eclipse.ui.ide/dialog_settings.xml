@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\USER\Downloads\iiii.zip"/>
+		<item value="C:\Users\USER\git\MainProject"/>
+		<item value="C:\Users\USER\git\main"/>
+	</list>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="true"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\project2.1 (2)"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\project2.1 (1)"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\project2.1"/>
+			<item value=""/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\project3"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\MainProject"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\com.itbank.project2"/>
+			<item value="C:\Users\USER\git\MainProject"/>
+			<item value="D:\취업반_스프링 프레임워크\workspace_spring\ws01"/>
+			<item value="C:\Users\USER\Downloads\day17"/>
+			<item value="C:\Users\USER\Downloads\mcDelevery"/>
+			<item value="C:\Users\USER\Downloads\day17_1\day17_1"/>
+			<item value="C:\Users\USER\Downloads\day17_1"/>
+			<item value="C:\Users\USER\Downloads\day13"/>
+			<item value="C:\Users\USER\Downloads\day13 (2)"/>
+			<item value="C:\Users\USER\Downloads\day14"/>
+			<item value="C:\Users\USER\OneDrive\바탕 화면\day13"/>
+			<item value="C:\Users\USER\OneDrive\바탕 화면\day12"/>
+			<item value="C:\Users\USER\OneDrive\바탕 화면\day11"/>
+			<item value="C:\Users\USER\OneDrive\바탕 화면\book"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\project2.1 (1).zip"/>
+			<item value="C:\Users\USER\Downloads\sftp.zip"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\project3.zip"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\홍서현12A.zip"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\MainProject.zip"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\com.itbank.project2.zip"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\2project.zip"/>
+			<item value="C:\Users\USER\Downloads\day17 (2).zip"/>
+			<item value="C:\Users\USER\Downloads\day13 (2) (1).zip"/>
+			<item value="C:\Users\USER\Downloads\day13.zip"/>
+			<item value="C:\Users\USER\OneDrive\문서\카카오톡 받은 파일\API_1.zip"/>
+			<item value="C:\Users\USER\Downloads\day17 (1).zip"/>
+			<item value="C:\Users\USER\Downloads\# ws_chat\ws05.zip"/>
+			<item value="C:\Users\USER\Downloads\# ws_chat\ws04.zip"/>
+			<item value="C:\Users\USER\Downloads\# ws_chat\ws03.zip"/>
+			<item value="C:\Users\USER\Downloads\# ws_chat\ws02.zip"/>
+			<item value="C:\Users\USER\Downloads\# ws_chat\ws01.zip"/>
+			<item value="C:\Users\USER\Downloads\ws03.zip"/>
+			<item value="C:\Users\USER\Downloads\ws02.zip"/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="com.springsource.sts.wizard.template"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.springframework.ide.eclipse.beans.ui.wizards.category"/>
+		</list>
+	</section>
+	<section name="CleanDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="670"/>
+		<item key="DIALOG_Y_ORIGIN" value="214"/>
+		<item key="DIALOG_WIDTH" value="581"/>
+		<item key="DIALOG_HEIGHT" value="527"/>
+		<item key="TOGGLE_SELECTED" value="false"/>
+		<item key="BUILD_NOW" value="true"/>
+		<item key="BUILD_ALL" value="true"/>
+	</section>
+	<section name="ResourceNavigator">
+		<item key="ResourceViewer.STORE_SORT_TYPE" value="1"/>
+		<item key="ResourceWorkingSetFilter.STORE_WORKING_SET" value="Aggregate for window 1638274202051"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/project2.1/src/main/webapp/WEB-INF/views/event/eventList.jsp&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/project2.1/src/main/java/com/itbank/controller/CenterCtroller.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/project2.1/src/main/webapp/WEB-INF/views/admin/insertEvent.jsp&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/project2.1/src/main/webapp/WEB-INF/views/center/공통.jsp&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<item key="ShowDerived" value="false"/>
+		<item key="FilterByLocation" value="false"/>
+		<item key="WorkingSet" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="669"/>
+			<item key="DIALOG_Y_ORIGIN" value="191"/>
+			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		</section>
+	</section>
+</section>

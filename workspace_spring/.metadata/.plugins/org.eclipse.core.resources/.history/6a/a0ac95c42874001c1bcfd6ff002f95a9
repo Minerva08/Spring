@@ -1,0 +1,77 @@
+package com.itbank.service;
+
+
+import java.util.HashMap;
+
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.mail.HtmlEmail;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.itbank.model.MemberDAO;
+import com.itbank.model.MemberDTO;
+
+@Service
+public class MemberService {
+
+	@Autowired MemberDAO dao;
+	
+	public MemberDTO isMember(MemberDTO dto) {
+		return dao.isMember(dto);
+		
+	}
+
+	public int join(MemberDTO dto) {
+		// TODO Auto-generated method stub
+		return dao.joinMember(dto);
+	}
+	
+
+	public MemberDTO duplicate_nickname(String user_nickname) {
+		
+		return dao.isNickName(user_nickname);
+	}
+
+	public String getEmail(String pnum) {
+		// TODO Auto-generated method stub
+		return dao.getEmail(pnum);
+	}
+	
+
+	
+	public MemberDTO duplicate_email(String user_email) {
+		return dao.isEmail(user_email);
+	}
+
+	public int modify_pw(HashMap<String, String> map) {
+		// TODO Auto-generated method stub
+		return dao.modify_pw(map);
+	}
+
+	public int modify_nick(HashMap<String, String> map) {
+		// TODO Auto-generated method stub
+		return dao.modify_nick(map);
+	}
+
+	public int modify_pnum(HashMap<String, String> map) {
+		// TODO Auto-generated method stub
+		return dao.modify_pnum(map);
+	}
+
+	public MemberDTO modify_info(String email) {
+		// TODO Auto-generated method stub
+		return dao.isEmail(email);
+	}
+
+	
+	//이메일발송
+	
+
+
+	
+	
+	
+}

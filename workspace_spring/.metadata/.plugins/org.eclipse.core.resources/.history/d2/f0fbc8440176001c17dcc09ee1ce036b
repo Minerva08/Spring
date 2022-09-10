@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="cpath" value="${pageContext.request.contextPath }"/>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>명품</title>
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/header.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/home.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/footer.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/event.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/center.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/member.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/myPage.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/product.css">
+<link rel="stylesheet" type="text/css" href="${cpath }/resources/css/trade.css">
+<%-- <link rel="stylesheet" type="text/css" href="${cpath }/resources/css/modal.css"> --%>
+
+<link rel="icon" type="icon/png" href="https://kream-phinf.pstatic.net/MjAyMTEyMDVfMjYg/MDAxNjM4NjUzMjAxNTA5.DhxLUC2x_1CNyaZbjpO_Ndxco7522eYy_3N1stgy3dgg.RXS83kTMh7zEYqucbtICkYTXw5chIEITDm3xb18EQ50g.JPEG/p_bd63492966a34e6180ce0d4c61c19e10.jpeg?type=sl">
+</head>
+<body>
+<script>const cpath = '${cpath}'</script>
+<script src="${cpath }/resources/js/header.js"></script>
+<script src="${cpath }/resources/js/member.js"></script>
+<body>  
+
+<div class="overlay"></div>
+<div class="search_component ffcl aice jcce">
+	<form action="${cpath }/header_search">
+		<div class="search_input">
+			<input type="search" name="search" placeholder="브랜드명, 모델명, 모델번호 등">
+			<span id="cancelBtn">취소</span>
+		</div>
+	</form>
+	<div class="search_category">리스트</div>
+</div>
+<header class="header">
+	<div class="header_component">
+		<div class="header_top">
+			<div class="top_list jcfe">
+				<ul class="jcfe">
+					<li><a href="${cpath }/center/home_notice">고객센터</a></li>
+					<li><a href="${cpath }/myPage/wishList">관심상품</a></li>
+					<li><a href="${cpath }/myPage/home_myPage">마이페이지</a></li>
+					<c:if test = "${not empty login }">
+						<li><a href="${cpath }/member/logout">로그아웃</a><li>
+						${login.user_nickname }님 환영합니다.
+					</c:if>
+					<c:if test = "${empty login }">
+						<li><a href="${cpath }/member/login">로그인</a><li>
+					</c:if>
+				</ul>
+			</div>
+		</div>
+		<div class="header_bottom jcsb">
+			<div class="header_logo aice"><a href="${cpath }">로고</a></div>
+			<div class="header_nav aice">
+				<ul class="df">
+					<li><a href="${cpath }/trade/tradeList">TRADE</a></li>
+					<li><a href="${cpath }/product/productList">SHOP</a></li> 
+					<li><a href="${cpath }/event/eventList">EVENT</a></li>
+					<li><span id="searchBtn" style="cursor: pointer;">🔍</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+<script>
+	const searchBtn = document.getElementById('searchBtn')
+	const cancelBtn = document.getElementById('cancelBtn')
+	const overlay = document.querySelector('.overlay')
+	const searchComponent = document.querySelector('.search_component')
+	searchBtn.onclick = onSearch
+	cancelBtn.onclick = closeSearch
+	overlay.onclick = closeSearch
+</script>
+	

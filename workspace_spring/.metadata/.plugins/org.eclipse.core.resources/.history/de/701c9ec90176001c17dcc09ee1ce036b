@@ -1,0 +1,250 @@
+function nowpage(url) {
+	const mypage_a = document.querySelectorAll('.myPage_left > div > ul > li > a')
+	for (let i = 0; i < mypage_a.length; i++) {
+		if (mypage_a[i].getAttribute('href') + '' == url + '') {
+			mypage_a[i].style.color = 'black'
+			mypage_a[i].style.fontWeight = 'bold'
+			return
+		}
+	}
+}
+
+function clickHandler(event) {
+	for (let i = 0; i < border_bottom.length; i++) {
+		if (i === +event.target.dataset.n) {
+			border_bottom[i].classList.add('border_bottom')
+			border_bottom[i].style.paddingBottom = '0px'
+			border_bottom[i].firstElementChild.style.color = 'red'
+			border_bottom[i].lastElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.fontWeight = 'bold'
+		}
+		else {
+			border_bottom[i].classList.remove('border_bottom')
+			border_bottom[i].style.paddingBottom = '2px'
+			border_bottom[i].firstElementChild.style.color = 'black'
+			border_bottom[i].lastElementChild.style.color = 'gray'
+			border_bottom[i].lastElementChild.style.fontWeight = ''
+		}
+	}
+}
+
+function input_originpw(event){
+	const underline=document.querySelector('.origin_pw')
+	underline.style.borderBottom='1px solid black'
+}
+
+function input_newpw(event){
+	const underline=document.getElementById('underline_pw')
+	underline.style.borderBottom='1px solid black'
+}
+
+function input_newnick(event){
+	const underline=document.getElementById('underline_nick')
+	underline.style.borderBottom='1px solid black'
+}
+function input_newpnum(event){
+	const underline=document.getElementById('underline_pnum')
+	underline.style.borderBottom='1px solid black'
+}
+
+function change_pw(event){
+	profile_info_pw.classList.add('hidden')
+    profile_pw.style.height='190px'
+    profile_pw.style.borderBottom='none'
+    profile_info_pw_change.classList.remove('hidden')  
+    profile_info_pw_change.style.marginTop='30px' 
+}
+
+function change_nick(event){
+	 profile_info_nickname.classList.add('hidden')
+     profile_nickname.style.height='130px'
+     profile_nickname.style.borderBottom='none'
+     profile_info_nick_change.classList.remove('hidden')
+     profile_info_nick_change.style.marginTop='30px' 
+}
+
+function change_pnum(event){
+	 profile_info_pnum.classList.add('hidden')
+     profile_pnum.style.height='130px'
+     profile_pnum.style.borderBottom='none'
+     profile_info_pnum_change.classList.remove('hidden')  
+     profile_info_pnum_change.style.marginTop='30px'
+}
+
+function cancel_pnum(event){
+	event.preventDefault()
+    event.stopPropagation() 
+    input_p.classList.add('hidden')
+    origin_p.classList.remove('hidden')
+    pnum.style.height='50px'
+    pnum.style.borderBottom='1px solid darkgrey'
+}
+
+function cancel_nick(event){
+	event.preventDefault()
+    event.stopPropagation() 
+    input_n.classList.add('hidden')
+    origin_n.classList.remove('hidden')
+    nickname.style.height='50px'
+    nickname.style.borderBottom='1px solid darkgrey'
+}
+function cancel_pw(event){
+	event.preventDefault()
+    event.stopPropagation() 
+    input_pw.classList.add('hidden')
+    origin_pw.classList.remove('hidden')
+    pw.style.height='50px'
+    pw.style.borderBottom='1px solid darkgrey'
+}
+
+
+function pnum_submit(event){
+	
+}
+
+
+function nick_submit(event){
+	event.preventDefault()
+		
+		
+		const ob = {}	
+		const formData = new FormData(event.target)
+		formData.append('user_email',c_nick.dataset.email);
+		
+		for(key of formData.keys()) {
+			console.log(key,': ',formData.get(key))
+			ob[key] = formData.get(key)
+		}
+		
+	
+		const url = cpath + '/modifyNick'
+		const opt = {
+			method: 'POST',
+			body: JSON.stringify(ob),
+			headers: {
+				'Content-Type': 'application/json; charset=utf-8'
+			}
+		}
+		
+		// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+		fetch(url, opt)
+		.then(resp => resp.text())
+		.then(text => {
+			console.log(text)
+			if(text == 1) {
+				alert('닉네임변경')
+				location.replace("/main/myPage/info/update")
+			}
+			else {
+				alert('변경 실패')
+				
+			}
+			
+		})
+}
+
+function pw_submit(event){
+	event.preventDefault()
+		
+		
+		const ob = {}	
+		const formData = new FormData(event.target)
+		formData.append('user_email',c_pw.dataset.email);
+		
+		for(key of formData.keys()) {
+			console.log(key,': ',formData.get(key))
+			ob[key] = formData.get(key)
+		}
+		
+		
+	
+		const url = cpath + '/modifyPw'
+		const opt = {
+			method: 'POST',
+			body: JSON.stringify(ob),
+			headers: {
+				'Content-Type': 'application/json; charset=utf-8'
+			}
+		}
+		
+		// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+		fetch(url, opt)
+		.then(resp => resp.text())
+		.then(text => {
+				console.log(text)
+			if(text == 1) {
+				alert('비밀번호 변경')
+				location.replace("/main/myPage/info/update")
+			}
+			else {
+				alert('변경 실패')
+				
+			}
+			
+		})
+		
+}
+
+function pnum_submit(event){
+	event.preventDefault()
+   	
+		const ob = {}	
+		const formData = new FormData(event.target)
+		formData.append('user_email',c_pnum.dataset.email);
+		
+		for(key of formData.keys()) {
+			console.log(key,': ',formData.get(key))
+			ob[key] = formData.get(key)
+		}
+		console.log(ob)
+	
+		const url = cpath + '/modifyPnum'
+		const opt = {
+			method: 'POST',
+			body: JSON.stringify(ob),
+			headers: {
+				'Content-Type': 'application/json; charset=utf-8'
+			}
+		}
+		
+		// 3) 전송 후 받은 응답에 따라 이후 처리 진행
+		fetch(url, opt)
+		.then(resp => resp.text())
+		.then(text => {
+				console.log(text)
+			if(text == 1) {
+				alert('비밀번호 변경')
+				location.replace("/main/myPage/info/update")
+			}
+			else {
+				alert('변경 실패')
+				
+			}
+			
+		})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

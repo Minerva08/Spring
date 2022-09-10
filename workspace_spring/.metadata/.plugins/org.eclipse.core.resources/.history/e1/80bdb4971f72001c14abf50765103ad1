@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+	<footer class="footer">
+		<div class="footer_component">
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+			푸터입니다
+		</div>
+	</footer>
+	<script>
+		const email = document.querySelector('input[name="user_email"]')
+		const pw = document.querySelector('input[name="user_pw"]')
+		const pw_check = document.querySelector('input[name="user_pw_check"]')
+		const nickname = document.querySelector('input[name="user_nickname"]')
+		const pnum = document.querySelector('input[name="user_pnum"]')
+		const gender = document.querySelector('input[name="user_gender"]')
+		const btn1 = document.querySelector('#duplicate_email_btn')
+		const btn2 = document.querySelector('#duplicate_nick_btn')
+		const msg_nick = document.querySelector('#msg_nick')
+		const msg_email = document.querySelector('#msg_email')
+		const join = document.getElementById('join')
+		const element_wrap = document.getElementById('wrap');
+		let count=0
+		
+		
+		
+		 const login = document.getElementById('LOGIN')
+		 const msg = '${msg}'
+	</script>
+</body>
+</html>

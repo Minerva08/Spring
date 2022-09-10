@@ -1,0 +1,80 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+    <section class = "member_join">
+    	
+        <h2>회원가입</h2>
+	
+        <form method="POST">
+            <p>이메일 주소*</p>
+            <div class="email df">
+                <input type="text" class="email" name="user_email" placeholder="e-mail" required="required" autofocus="autofocus" autocomplete="off">
+                <button id="duplicate_email_btn">확인</button>
+            </div>
+	            <p id="msg_email"></p>
+            
+            <p>비밀번호*</p>
+            <div class="pw">
+                <input name="user_pw" type="password" id="password_1" class="user_pw" placeholder="비밀번호">
+            	<p id="alert1"style="display: none;"></p>
+            </div>
+
+            <p>비밀번호 확인*</p>
+            <div class="pw_c">
+                <input type="password" id="password_2" class="user_pw_check" name="user_pw_check"placeholder="비밀번호 확인">
+            	<p id="alert2" style="display: none;"></p>
+            </div>
+
+            <p>닉네임</p>
+            <div class="nickname df">
+                <input type="text" name="user_nickname" placeholder="nickname" required="required" autocomplete="off">
+                <button id="duplicate_nick_btn">확인</button>
+            </div>
+             <p id="msg_nick"></p>
+
+            <p>전화번호*</p>
+            <div class="pnum">
+                <input type="text" name="user_pnum" placeholder="'-'을 제외하고 입력해주십시오" required="required">
+            </div>
+            
+            <p>성별</p>
+            <div class="gender">
+                <label><input type="radio" name="user_gender" value="male" required="required">남성</label>
+                <label><input type="radio" name="user_gender" value="female">여성</label>
+            </div>
+			
+           <button id="join">가입하기</button>
+            
+        </form>
+    
+    </section>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script><!--jquery용 라이브러리 -->
+
+<script>
+	const email = document.querySelector('input[name="user_email"]')
+	const pw = document.querySelector('input[name="user_pw"]')
+	const pw_check = document.querySelector('input[name="user_pw_check"]')
+	const nickname = document.querySelector('input[name="user_nickname"]')
+	const pnum = document.querySelector('input[name="user_pnum"]')
+	const gender = document.querySelector('input[name="user_gender"]')
+	const btn1 = document.querySelector('#duplicate_email_btn')
+	const btn2 = document.querySelector('#duplicate_nick_btn')
+	const msg_nick = document.querySelector('#msg_nick')
+	const msg_email = document.querySelector('#msg_email')
+	const join = document.getElementById('join')
+
+	let count=0
+        
+	window.onload=onload_join
+	btn1.onclick = duplicate_email
+	btn2.onclick =duplicate_nick
+	join.onclick = go_join
+	$('.user_pw').focusout(join_pw)
+    $('.user_pw_check').blur(join_pwcheck)
+
+</script>
+
+
+<%@ include file="../footer.jsp"%>
+
+

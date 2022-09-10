@@ -1,0 +1,10 @@
+package com.itbank.model;
+
+public class AddressDTO {
+	
+	private String user_email;
+	private String user_postnum;
+	private String user_address;
+	
+
+}

@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../header.jsp"%>
+<section class="myPage_address">
+
+</section>
+<section class="side_bar">
+
+</section>
+
+<section class="address">
+
+</section>
+<%@ include file="../footer.jsp"%>
+
+
+<!-- 주소록 -->

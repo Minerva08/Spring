@@ -1,0 +1,47 @@
+package com.itbank.model;
+
+public class AddressDTO {
+	
+	
+	
+	private String address_pnum;
+	private String user_email;
+	private String address;
+	private String address_name;
+	private String default_address;
+	
+	
+	public String getAddress_pnum() {
+		return address_pnum;
+	}
+	public void setAddress_pnum(String address_pnum) {
+		this.address_pnum = address_pnum;
+	}
+	public String getUser_email() {
+		return user_email;
+	}
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getAddress_name() {
+		return address_name;
+	}
+	public void setAddress_name(String address_name) {
+		this.address_name = address_name;
+	}
+	public String getDefault_address() {
+		return default_address;
+	}
+	public void setDefault_address(String default_address) {
+		this.default_address = default_address;
+	}
+	
+	
+	
+}
